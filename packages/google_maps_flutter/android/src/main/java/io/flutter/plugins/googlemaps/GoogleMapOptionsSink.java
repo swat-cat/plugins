@@ -30,4 +30,6 @@ interface GoogleMapOptionsSink {
   void setZoomGesturesEnabled(boolean zoomGesturesEnabled);
 
   void setMyLocationEnabled(boolean myLocationEnabled);
+
+  void setMapStyle(String style);
 }

@@ -213,6 +213,10 @@ class Convert {
     if (myLocationEnabled != null) {
       sink.setMyLocationEnabled(toBoolean(myLocationEnabled));
     }
+    final Object myMapStyle = data.get("myMapStyle");
+    if (myMapStyle != null){
+      sink.setMapStyle(toString(myMapStyle));
+    }
   }
 
   static void interpretMarkerOptions(Object o, MarkerOptionsSink sink) {
