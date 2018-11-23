@@ -87,6 +87,7 @@ class GoogleMapOptions {
     this.trackCameraPosition,
     this.zoomGesturesEnabled,
     this.myLocationEnabled,
+    this.mapStyle,
   });
 
   /// The desired position of the map camera.
@@ -151,6 +152,7 @@ class GoogleMapOptions {
   /// when the map tries to turn on the My Location layer.
   final bool myLocationEnabled;
 
+  final String mapStyle;
   /// Default user interface options.
   ///
   /// Specifies a map view that
@@ -177,6 +179,7 @@ class GoogleMapOptions {
     trackCameraPosition: false,
     zoomGesturesEnabled: true,
     myLocationEnabled: false,
+    mapStyle: ""
   );
 
   /// Creates a new options object whose values are the same as this instance,
@@ -201,6 +204,7 @@ class GoogleMapOptions {
       trackCameraPosition: change.trackCameraPosition ?? trackCameraPosition,
       zoomGesturesEnabled: change.zoomGesturesEnabled ?? zoomGesturesEnabled,
       myLocationEnabled: change.myLocationEnabled ?? myLocationEnabled,
+      mapStyle: change.mapStyle ?? mapStyle,
     );
   }
 
@@ -224,6 +228,7 @@ class GoogleMapOptions {
     addIfPresent('trackCameraPosition', trackCameraPosition);
     addIfPresent('zoomGesturesEnabled', zoomGesturesEnabled);
     addIfPresent('myLocationEnabled', myLocationEnabled);
+    addIfPresent("myMapStyle", mapStyle);
     return json;
   }
 }
