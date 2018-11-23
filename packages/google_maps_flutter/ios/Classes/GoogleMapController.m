@@ -403,6 +403,13 @@ static void interpretMapOptions(id json, id<FLTGoogleMapOptionsSink> sink) {
   if (myLocationEnabled) {
     [sink setMyLocationEnabled:toBool(myLocationEnabled)];
   }
+  id stylePreference = data["myMapStyle"];
+  if (stylePreference && [stylePreference isKindOfClass:[NSString class]]) {
+    NSString* styleString = (NSString *)stylePreference;
+    if ([styleString length] != 0) {
+        [sink setStyle:styleString];
+    }
+  }
 }
 
 static void interpretMarkerOptions(id json, id<FLTGoogleMapMarkerOptionsSink> sink,

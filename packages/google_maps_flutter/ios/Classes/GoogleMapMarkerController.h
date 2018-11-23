@@ -19,6 +19,7 @@
 - (void)setRotation:(CLLocationDegrees)rotation;
 - (void)setVisible:(BOOL)visible;
 - (void)setZIndex:(int)zIndex;
+- (void)setStyle:(NSString)style;
 @end
 
 // Defines marker controllable by Flutter.

@@ -60,4 +60,7 @@ static uint64_t _nextMarkerId = 0;
 - (void)setZIndex:(int)zIndex {
   _marker.zIndex = zIndex;
 }
+- (void)setStyle:(NSString)style {
+    _mapView.mapStyle = [GMSMapStyle styleWithJSONString: style error: NULL];
+}
 @end
