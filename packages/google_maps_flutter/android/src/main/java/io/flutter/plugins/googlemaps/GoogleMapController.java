@@ -426,6 +426,11 @@ final class GoogleMapController
     }
   }
 
+  @Override
+  public void setMapStyle(String style) {
+    this.style = style;
+  }
+
   private void updateMyLocationEnabled() {
     if (hasLocationPermission()) {
       googleMap.setMyLocationEnabled(myLocationEnabled);
