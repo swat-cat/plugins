@@ -447,7 +447,10 @@ static void interpretMarkerOptions(id json, id<FLTGoogleMapMarkerOptionsSink> si
                                                                     alpha:1.0]];
         } else if ([iconData[0] isEqualToString:@"fromAsset"]) {
             if (iconData.count == 2) {
-                image = [UIImage imageNamed:[registrar lookupKeyForAsset:iconData[1]]];
+                NSString *path = [NSString stringWithFormat:@"%@/flutter_assets/%@", [[NSBundle mainBundle] resourcePath], iconData[1]];
+                                image = [UIImage imageWithContentsOfFile:path];
+
+                //                image = [UIImage imageNamed:[registrar lookupKeyForAsset:iconData[1]]];
             } else {
                 image = [UIImage imageNamed:[registrar lookupKeyForAsset:iconData[1]
                                                              fromPackage:iconData[2]]];
