@@ -88,7 +88,7 @@ class GoogleMapController extends ChangeNotifier {
         final String markerId = call.arguments['marker'];
         final Marker marker = _markers[markerId];
         if (marker != null) {
-          //onMarkerTapped(marker);
+          onMarkerTapped(marker);
         }
         break;
       case 'camera#onMoveStarted':

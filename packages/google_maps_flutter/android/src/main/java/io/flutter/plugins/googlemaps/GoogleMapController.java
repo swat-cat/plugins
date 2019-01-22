@@ -288,7 +288,7 @@ final class GoogleMapController
   @Override
   public boolean onMarkerClick(Marker marker) {
     final MarkerController markerController = markers.get(marker.getId());
-    return (markerController != null && markerController.onTap());
+    return true;
   }
 
   @Override
