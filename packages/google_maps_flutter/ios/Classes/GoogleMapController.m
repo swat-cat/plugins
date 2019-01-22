@@ -248,7 +248,7 @@ static void interpretMarkerOptions(id json, id<FLTGoogleMapMarkerOptionsSink> si
 - (BOOL)mapView:(GMSMapView*)mapView didTapMarker:(GMSMarker*)marker {
     NSString* markerId = marker.userData[0];
     [_delegate onMarkerTappedOnMap:_mapId marker:markerId];
-    return [marker.userData[1] boolValue];
+    return true;
 }
 
 - (void)mapView:(GMSMapView*)mapView didTapInfoWindow:(GMSMarker*)marker {
