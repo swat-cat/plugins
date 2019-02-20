@@ -21,6 +21,7 @@ class GoogleMap extends StatefulWidget {
     this.tiltGesturesEnabled = true,
     this.trackCameraPosition = false,
     this.myLocationEnabled = false,
+    this.mapStyle = "",
   }) : assert(initialCameraPosition != null);
 
   final MapCreatedCallback onMapCreated;
@@ -36,6 +37,8 @@ class GoogleMap extends StatefulWidget {
 
   /// Type of map tiles to be rendered.
   final MapType mapType;
+
+  final String mapStyle;
 
   /// Preferred bounds for the camera zoom level.
   ///
@@ -56,6 +59,7 @@ class GoogleMap extends StatefulWidget {
 
   /// True if the map view should relay camera move events to Flutter.
   final bool trackCameraPosition;
+
 
   /// True if a "My Location" layer should be shown on the map.
   ///
@@ -181,6 +185,7 @@ class _GoogleMapOptions {
     this.trackCameraPosition,
     this.zoomGesturesEnabled,
     this.myLocationEnabled,
+    this.mapStyle,
   });
 
   static _GoogleMapOptions fromWidget(GoogleMap map) {
@@ -192,9 +197,11 @@ class _GoogleMapOptions {
       rotateGesturesEnabled: map.rotateGesturesEnabled,
       scrollGesturesEnabled: map.scrollGesturesEnabled,
       tiltGesturesEnabled: map.tiltGesturesEnabled,
+
       trackCameraPosition: map.trackCameraPosition,
       zoomGesturesEnabled: map.zoomGesturesEnabled,
       myLocationEnabled: map.myLocationEnabled,
+      mapStyle: map.mapStyle,
     );
   }
 
@@ -218,6 +225,8 @@ class _GoogleMapOptions {
 
   final bool myLocationEnabled;
 
+  final String mapStyle;
+
   Map<String, dynamic> toMap() {
     final Map<String, dynamic> optionsMap = <String, dynamic>{};
 
@@ -237,6 +246,7 @@ class _GoogleMapOptions {
     addIfNonNull('zoomGesturesEnabled', zoomGesturesEnabled);
     addIfNonNull('trackCameraPosition', trackCameraPosition);
     addIfNonNull('myLocationEnabled', myLocationEnabled);
+    addIfNonNull("myMapStyle", mapStyle);
     return optionsMap;
   }
 
