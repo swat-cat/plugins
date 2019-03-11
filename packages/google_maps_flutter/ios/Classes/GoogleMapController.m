@@ -446,7 +446,7 @@ static void interpretMarkerOptions(id json, id<FLTGoogleMapMarkerOptionsSink> si
                 //NSString *path = [NSString stringWithFormat:@"%@/flutter_assets/%@", [[NSBundle mainBundle] resourcePath], iconData[1]];
                                 //image = [UIImage imageWithContentsOfFile:path];
 
-                                image = [UIImage imageNamed: @iconData[1]];
+                                image = [UIImage imageNamed: iconData[1]];
             } else {
                 image = [UIImage imageNamed:[registrar lookupKeyForAsset:iconData[1]
                                                              fromPackage:iconData[2]]];
